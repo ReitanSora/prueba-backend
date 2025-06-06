@@ -14,7 +14,6 @@ export class ServicesService {
   async create(user: CreateUserDto, ip: string) {
     const ipv4 = ip.replace('::ffff:', '');
     const res = await fetch(`http://ip-api.com/json/${ipv4}`);
-    console.log(ipv4);
     const response = (await res.json()) as DirectionProps;
     let petData;
 
